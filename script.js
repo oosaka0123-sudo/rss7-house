@@ -10,3 +10,12 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.cont
 const reveals=document.querySelectorAll('.reveal');
 if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});reveals.forEach(el=>observer.observe(el))}else reveals.forEach(el=>el.classList.add('visible'));
 document.querySelector('#demo-form').addEventListener('submit',e=>{e.preventDefault();e.currentTarget.querySelector('.form-status').textContent='デモ確認完了：入力内容は送信・保存されていません。'});
+
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const progress=document.querySelector('.progress');
+const heroImage=document.querySelector('.hero>img');
+let ticking=false;
+const motionFrame=()=>{const max=document.documentElement.scrollHeight-innerHeight;const ratio=max>0?scrollY/max:0;progress.style.transform=`scaleX(${ratio})`;if(!reduceMotion&&scrollY<innerHeight)heroImage.style.translate=`0 ${scrollY*.16}px`;ticking=false};
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(motionFrame);ticking=true}},{passive:true});motionFrame();
+
+if(matchMedia('(pointer:fine)').matches&&!reduceMotion){const cursor=document.querySelector('.cursor');let x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY});const cursorFrame=()=>{cx+=(x-cx)*.18;cy+=(y-cy)*.18;cursor.style.left=`${cx}px`;cursor.style.top=`${cy}px`;requestAnimationFrame(cursorFrame)};cursorFrame();document.querySelectorAll('.project,.button,.header-cta').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('active'));el.addEventListener('mouseleave',()=>cursor.classList.remove('active'))});document.querySelectorAll('.project').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const rx=(e.clientY-r.top-r.height/2)/r.height*-4;const ry=(e.clientX-r.left-r.width/2)/r.width*4;card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`});card.addEventListener('mouseleave',()=>card.style.transform='')})}
