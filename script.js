@@ -60,12 +60,12 @@ const updateProgress = () => {
   progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
   ticking = false;
 };
-if (!reduceMotion) {
-  addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateProgress);
-      ticking = true;
-    }
-  }, { passive: true });
-  updateProgress();
-}
+addEventListener('scroll', () => {
+  if (reduceMotion) {
+    updateProgress();
+  } else if (!ticking) {
+    requestAnimationFrame(updateProgress);
+    ticking = true;
+  }
+}, { passive: true });
+updateProgress();
