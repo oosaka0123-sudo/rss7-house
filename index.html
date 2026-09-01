@@ -4,8 +4,8 @@
   <script>document.documentElement.classList.add('js')</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="RSS7 HOUSEは、関西の暮らしに寄り添う自由設計の注文住宅ブランドです。">
-  <meta name="theme-color" content="#1A1A17">
+  <meta name="description" content="RSS7 HOUSE｜関西の風土と暮らしに寄り添う、建築家主導の自由設計・注文住宅ブランド。">
+  <meta name="theme-color" content="#161B18">
   <title>RSS7 HOUSE｜暮らしを、もっと自由に。</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/hero-house.webp" as="image" type="image/webp" fetchpriority="high">
@@ -14,27 +14,37 @@
 <body>
   <svg class="mark-defs" aria-hidden="true" focusable="false">
     <symbol id="rss7-mark" viewBox="0 0 64 64">
-      <path d="M12 14H48M12 14V50M48 14 22 54" />
+      <path class="mark-main" d="M12 14H48M12 14V50M48 14 22 54" />
       <path class="mark-ticks" d="M12 24H20M12 32H20M12 40H20" />
     </symbol>
   </svg>
 
   <div class="progress" aria-hidden="true"></div>
-  <div class="demo-notice" role="region" aria-label="デモサイトに関する注記">CONCEPT DEMO — 掲載内容・実績・性能値は架空のデモ情報です</div>
+  <div class="demo-notice" role="region" aria-label="デモサイトに関する注記">
+    <span class="notice-tag">CONCEPT DEMO</span>
+    <span class="notice-text">掲載内容・実績・性能値は架空のデモ情報です</span>
+  </div>
   <a class="skip" href="#main">本文へ移動</a>
 
   <header class="header" id="header">
     <a class="logo" href="#top" aria-label="RSS7 HOUSE ホーム">
       <svg class="logo-mark" aria-hidden="true"><use href="#rss7-mark" /></svg>
-      <span class="logo-type"><b>RSS7</b><i>HOUSE</i></span>
+      <span class="logo-type">
+        <span class="brand-name"><b>RSS7</b><i>HOUSE</i></span>
+        <span class="brand-sub">ARCHITECTURAL STUDIO</span>
+      </span>
     </a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">
       <a href="#concept">私たちの家づくり</a>
       <a href="#works">施工事例</a>
-      <a href="#quality">性能</a>
+      <a href="#quality">性能・構造</a>
       <a href="#flow">家づくりの流れ</a>
+      <a href="#faq">よくある質問</a>
     </nav>
-    <a class="header-cta" href="#contact">来場予約</a>
+    <a class="header-cta" href="#contact">
+      <span>来場予約・相談</span>
+      <i class="cta-arrow" aria-hidden="true">↗</i>
+    </a>
     <button class="menu-button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span>
     </button>
@@ -42,140 +52,407 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
     <nav aria-label="モバイルナビゲーション">
-      <a href="#concept">私たちの家づくり</a>
-      <a href="#works">施工事例</a>
-      <a href="#quality">性能</a>
-      <a href="#flow">家づくりの流れ</a>
-      <a href="#contact">来場予約</a>
+      <div class="mobile-nav-meta">
+        <span class="meta-label">NAVIGATION</span>
+        <span class="meta-geo">34°41'N 135°30'E / KANSAI</span>
+      </div>
+      <a href="#concept"><span class="nav-num">01</span><span class="nav-txt">私たちの家づくり</span></a>
+      <a href="#works"><span class="nav-num">02</span><span class="nav-txt">施工事例</span></a>
+      <a href="#quality"><span class="nav-num">03</span><span class="nav-txt">性能・構造</span></a>
+      <a href="#flow"><span class="nav-num">04</span><span class="nav-txt">家づくりの流れ</span></a>
+      <a href="#faq"><span class="nav-num">05</span><span class="nav-txt">よくある質問</span></a>
+      <a href="#contact" class="mobile-nav-cta"><span class="nav-num">06</span><span class="nav-txt">来場予約・ご相談 ↗</span></a>
     </nav>
   </div>
 
   <main id="main">
     <section class="hero" id="top">
-      <img src="assets/hero-house.webp" width="1536" height="1024" alt="木と塗り壁を組み合わせたRSS7 HOUSEの注文住宅" fetchpriority="high">
+      <img src="assets/hero-house.webp" width="1536" height="1024" alt="木と手塗り壁が調和するRSS7 HOUSEの現代建築" fetchpriority="high">
       <div class="hero-shade"></div>
-      <div class="hero-datum" aria-hidden="true"><span>01</span><i></i></div>
-      <div class="hero-content">
-        <p class="eyebrow">CUSTOM HOMES IN KANSAI</p>
-        <h1 class="reveal-mask"><span>暮らしを、</span><br><span>もっと自由に。</span></h1>
-        <p class="hero-copy reveal-fade">家族の数だけ、心地よさがある。<br>土地と暮らしから考える、あなただけの住まい。</p>
-        <a class="text-link light reveal-fade" href="#concept">RSS7 HOUSEを知る <span>↗</span></a>
+
+      <div class="hero-datum-bar" aria-hidden="true">
+        <span class="datum-tag">DATUM 00</span>
+        <span class="datum-line"></span>
+        <span class="datum-coord">34°41'N 135°30'E</span>
       </div>
-      <p class="scroll">SCROLL <i></i></p>
+
+      <div class="hero-content">
+        <div class="hero-header-group reveal-fade">
+          <p class="eyebrow"><span class="accent-dot"></span>KANSAI ARCHITECTURAL CUSTOM HOMES</p>
+          <p class="hero-subhead">SASHIGANE SEVEN DESIGN STUDIO</p>
+        </div>
+        <h1 class="reveal-mask">
+          <span>暮らしを、</span><br>
+          <span>もっと自由に。</span>
+        </h1>
+        <div class="hero-footer-group reveal-fade">
+          <p class="hero-copy">
+            家族の数だけ、固有の心地よさがある。<br>
+            敷地の風土と家族の記憶から立ち上がる、確かな建築。
+          </p>
+          <div class="hero-actions">
+            <a class="text-link light" href="#concept">
+              <span>RSS7 HOUSE の思想を見る</span>
+              <span class="link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>SCROLL DOWN</span>
+        <i></i>
+      </div>
     </section>
 
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span>DESIGN YOUR LIFE</span><i></i><span>LIVE YOUR WAY</span><i></i><span>RSS7 HOUSE</span><i></i>
-        <span>DESIGN YOUR LIFE</span><i></i><span>LIVE YOUR WAY</span><i></i><span>RSS7 HOUSE</span><i></i>
+        <span>SASHIGANE SEVEN</span><i></i>
+        <span>ARCHITECTURAL PRECISION</span><i></i>
+        <span>DESIGN YOUR LIFE</span><i></i>
+        <span>LIVE YOUR WAY</span><i></i>
+        <span>RSS7 HOUSE KANSAI</span><i></i>
+        <span>SASHIGANE SEVEN</span><i></i>
+        <span>ARCHITECTURAL PRECISION</span><i></i>
+        <span>DESIGN YOUR LIFE</span><i></i>
+        <span>LIVE YOUR WAY</span><i></i>
+        <span>RSS7 HOUSE KANSAI</span><i></i>
       </div>
     </div>
 
     <section class="intro section" id="concept">
-      <div class="section-label reveal-fade">01 / PHILOSOPHY</div>
+      <div class="section-meta reveal-fade">
+        <span class="section-label">01 / PHILOSOPHY</span>
+        <span class="section-tag">建築思想</span>
+      </div>
       <div class="intro-grid">
-        <h2 class="reveal-mask"><span>家は、完成してからが</span><br><span>本当のはじまり。</span></h2>
-        <div class="reveal-fade">
-          <p>見た目の美しさだけではなく、夏も冬も心地よく、年月とともに愛着が深まること。RSS7 HOUSEは、設計・性能・素材のすべてを、そこで暮らす家族から考えます。</p>
-          <a class="text-link" href="#quality">私たちの考え方 <span>↗</span></a>
+        <div class="intro-headline">
+          <h2 class="reveal-mask">
+            <span>家は、完成してからが</span><br>
+            <span>本当のはじまり。</span>
+          </h2>
+        </div>
+        <div class="intro-body reveal-fade">
+          <p class="lead-text">
+            造形的な美しさにとどまらず、夏も冬も穏やかな温熱環境に包まれ、時を重ねるごとに愛着が深まる住まい。
+          </p>
+          <p class="description-text">
+            RSS7 HOUSE（指矩セブンハウス）は、ミリ単位の精度にこだわる職人技術と現代建築デザインを融合。敷地の光と風を読み解き、家族の暮らしに深く寄り添う自由設計を追求します。
+          </p>
+          <a class="text-link" href="#quality">
+            <span>確かな性能と構造を見る</span>
+            <span class="link-arrow">↗</span>
+          </a>
         </div>
       </div>
-      <div class="statement" aria-hidden="true">LIVE YOUR WAY.</div>
+      <div class="statement" aria-hidden="true">PRECISION &amp; HARMONY.</div>
     </section>
 
     <section class="works section" id="works">
       <div class="section-head">
-        <div><div class="section-label reveal-fade">02 / WORKS</div><h2 class="reveal-mask"><span>暮らしの実例。</span></h2></div>
-        <p class="reveal-fade">同じ家は、ひとつもない。<br>家族ごとの答えをご覧ください。</p>
+        <div class="section-head-main">
+          <div class="section-meta reveal-fade">
+            <span class="section-label">02 / WORKS</span>
+            <span class="section-tag">施工事例</span>
+          </div>
+          <h2 class="reveal-mask">
+            <span>風土と織りなす、</span><br>
+            <span>暮らしの実例。</span>
+          </h2>
+        </div>
+        <div class="section-head-side reveal-fade">
+          <p>
+            敷地の輪郭と家族の美意識に応える。<br>
+            ひとつとして同じ解のない建築の記録。
+          </p>
+        </div>
       </div>
+
       <div class="project-grid">
-        <article class="project project-main reveal-image">
-          <div class="project-image image-one"><span class="project-index">01</span></div>
+        <article class="project project-featured reveal-image">
+          <div class="project-media">
+            <div class="project-image image-one"></div>
+            <span class="project-index">PROJECT 01</span>
+            <span class="project-tag">HYOGO / NISHINOMIYA</span>
+          </div>
           <div class="project-meta">
-            <div><h3>庭とリビングがつながる家</h3><p>兵庫県西宮市｜木造2階建て</p></div>
-            <a class="project-link" href="#contact" aria-label="庭とリビングがつながる家の詳細を見る">見る <span>↗</span></a>
+            <div class="project-info">
+              <h3>庭とリビングがひとつに溶け合う家</h3>
+              <p>兵庫県西宮市｜木造2階建て・延床面積 132㎡</p>
+            </div>
+            <a class="project-link" href="#contact" aria-label="庭とリビングがひとつに溶け合う家の詳細を見る">
+              <span>事例詳細を見る</span>
+              <span class="link-arrow">↗</span>
+            </a>
           </div>
         </article>
+
         <article class="project reveal-image">
-          <div class="project-image image-two"><span class="project-index">02</span></div>
+          <div class="project-media">
+            <div class="project-image image-two"></div>
+            <span class="project-index">PROJECT 02</span>
+            <span class="project-tag">OSAKA / TOYONAKA</span>
+          </div>
           <div class="project-meta">
-            <div><h3>光を招く、中庭のある家</h3><p>大阪府豊中市｜木造2階建て・デモ事例</p></div>
-            <a class="project-link" href="#contact" aria-label="光を招く、中庭のある家の詳細を見る">見る <span>↗</span></a>
+            <div class="project-info">
+              <h3>光を招き入れる、中庭を囲む家</h3>
+              <p>大阪府豊中市｜木造2階建て・デモ想定事例</p>
+            </div>
+            <a class="project-link" href="#contact" aria-label="光を招き入れる、中庭を囲む家の詳細を見る">
+              <span>事例詳細を見る</span>
+              <span class="link-arrow">↗</span>
+            </a>
           </div>
         </article>
       </div>
     </section>
 
     <section class="quality section" id="quality">
-      <div class="quality-copy reveal-fade">
-        <div class="section-label">03 / QUALITY</div>
-        <h2>見えないところに、<br>確かな品質を。</h2>
-        <p>一年中快適な温熱環境、もしもの時に家族を守る構造、長く安心して住み継げる耐久性。数字で確認できる性能を、すべての住まいに。</p>
+      <div class="quality-grid">
+        <div class="quality-copy reveal-fade">
+          <div class="section-meta">
+            <span class="section-label">03 / QUALITY</span>
+            <span class="section-tag">性能と構造</span>
+          </div>
+          <h2>見えない細部に、<br>妥協なき確かな品質を。</h2>
+          <p>
+            四季を通じて心地よい温熱環境、万一の震災から家族の命を守る構造耐力、そして数十年先まで住み継げる耐久性。感覚だけに頼らず、客観的な数値で実証された住宅性能を標準で備えます。
+          </p>
+          <div class="quality-badge">
+            <span class="badge-title">STANDARDS</span>
+            <span class="badge-desc">全棟気密測定・構造計算実施</span>
+          </div>
+        </div>
+
+        <div class="specs">
+          <div class="spec reveal-fade">
+            <span class="spec-num">01</span>
+            <div class="spec-detail">
+              <span class="spec-category">HEAT INSULATION</span>
+              <h3>断熱性能</h3>
+            </div>
+            <div class="spec-value">
+              <strong>断熱等級 6</strong>
+              <small>HEAT20 G2相当・標準仕様</small>
+            </div>
+          </div>
+
+          <div class="spec reveal-fade">
+            <span class="spec-num">02</span>
+            <div class="spec-detail">
+              <span class="spec-category">AIRTIGHTNESS</span>
+              <h3>気密性能</h3>
+            </div>
+            <div class="spec-value">
+              <strong>C値 0.5 <span class="unit">cm²/m²以下</span></strong>
+              <small>全棟完成時・気密測定を実施</small>
+            </div>
+          </div>
+
+          <div class="spec reveal-fade">
+            <span class="spec-num">03</span>
+            <div class="spec-detail">
+              <span class="spec-category">STRUCTURE</span>
+              <h3>耐震性能</h3>
+            </div>
+            <div class="spec-value">
+              <strong>耐震等級 3</strong>
+              <small>許容応力度計算による構造検証</small>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="specs">
-        <div class="spec reveal-fade"><span>01</span><p>断熱性能</p><strong>断熱等級 6</strong><small>標準仕様</small></div>
-        <div class="spec reveal-fade"><span>02</span><p>気密性能</p><strong>C値 0.5以下</strong><small>全棟気密測定</small></div>
-        <div class="spec reveal-fade"><span>03</span><p>耐震性能</p><strong>耐震等級 3</strong><small>許容応力度計算</small></div>
-      </div>
-      <p class="demo-footnote">※ 掲載している性能値はコンセプトデモ用の想定仕様です。実際の性能・測定条件・標準仕様を示すものではありません。</p>
+      <p class="demo-footnote">※ 本セクションの数値および仕様表記はコンセプトデモ用の想定値であり、特定の施工実績を保証するものではありません。</p>
     </section>
 
     <section class="flow section" id="flow">
       <div class="section-head">
-        <div><div class="section-label reveal-fade">04 / PROCESS</div><h2 class="reveal-mask"><span>家づくりの流れ。</span></h2></div>
-        <p class="reveal-fade">出会いから、完成後の暮らしまで。<br>同じチームが寄り添います。</p>
+        <div class="section-head-main">
+          <div class="section-meta reveal-fade">
+            <span class="section-label">04 / PROCESS</span>
+            <span class="section-tag">家づくりの工程</span>
+          </div>
+          <h2 class="reveal-mask">
+            <span>想いを形にする、</span><br>
+            <span>対話と設計のステップ。</span>
+          </h2>
+        </div>
+        <div class="section-head-side reveal-fade">
+          <p>
+            最初のご相談からお引き渡し、その後の暮らしまで。<br>
+            専任の建築技術チームが寄り添います。
+          </p>
+        </div>
       </div>
+
       <ol class="steps">
-        <li class="reveal-fade"><b>01</b><div><h3>相談・土地探し</h3><p>理想の暮らしとご予算を伺い、土地選びから伴走します。</p></div></li>
-        <li class="reveal-fade"><b>02</b><div><h3>設計・見積り</h3><p>敷地と暮らしに合わせ、建築家がゼロから設計します。</p></div></li>
-        <li class="reveal-fade"><b>03</b><div><h3>施工・品質管理</h3><p>専任監督が工程ごとに検査し、丁寧につくり上げます。</p></div></li>
-        <li class="reveal-fade"><b>04</b><div><h3>完成・アフター</h3><p>お引渡し後も定期点検で、住まいを末永く見守ります。</p></div></li>
+        <li class="reveal-fade">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <span class="step-tag">CONSULTATION</span>
+            <h3>ご相談・土地診断</h3>
+            <p>ご予算や理想の暮らしをヒアリング。土地の風土や日照条件を検証し、最適な土地選びから伴走します。</p>
+          </div>
+        </li>
+        <li class="reveal-fade">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <span class="step-tag">ARCHITECTURAL DESIGN</span>
+            <h3>建築設計・資金計画</h3>
+            <p>敷地の個性とご家族の生活導線に寄り添い、建築家がゼロから図面と立体モデルを作成。概算見積りも提示します。</p>
+          </div>
+        </li>
+        <li class="reveal-fade">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <span class="step-tag">CONSTRUCTION</span>
+            <h3>精密施工・品質検査</h3>
+            <p>自社監督と熟練職人が連携。各工程での厳しい第三者検査および気密測定を行い、寸分の狂いなく施工します。</p>
+          </div>
+        </li>
+        <li class="reveal-fade">
+          <span class="step-num">04</span>
+          <div class="step-content">
+            <span class="step-tag">AFTER SERVICE</span>
+            <h3>お引渡し・定期点検</h3>
+            <p>念願の住まいのお引渡し。定期的な点検と点検プログラムにより、末永く安心の暮らしをサポートします。</p>
+          </div>
+        </li>
       </ol>
     </section>
 
     <section class="faq section" id="faq">
       <div class="section-head">
-        <div><div class="section-label reveal-fade">05 / FAQ</div><h2 class="reveal-mask"><span>よくあるご質問。</span></h2></div>
-        <p class="reveal-fade">家づくりを始める前の、<br>よくある疑問にお答えします。</p>
+        <div class="section-head-main">
+          <div class="section-meta reveal-fade">
+            <span class="section-label">05 / FAQ</span>
+            <span class="section-tag">よくある質問</span>
+          </div>
+          <h2 class="reveal-mask">
+            <span>家づくりについての</span><br>
+            <span>疑問にお答えします。</span>
+          </h2>
+        </div>
+        <div class="section-head-side reveal-fade">
+          <p>初めての注文住宅検討で疑問に思われるポイントをまとめました。</p>
+        </div>
       </div>
+
       <div class="faq-list">
-        <details><summary>土地が決まっていなくても相談できますか？</summary><p>はい。ご希望の地域や暮らし方、ご予算を伺い、土地探しと建物計画を一緒に進める想定です。</p></details>
-        <details><summary>完成までの期間はどれくらいですか？</summary><p>初回相談から完成まで約10〜14か月が一般的な目安です。土地や設計内容により変わります。</p></details>
-        <details><summary>相談やモデルハウス見学は有料ですか？</summary><p>初回相談と見学は無料というデモ設定です。実際のサービス開始時に正式条件をご案内します。</p></details>
+        <details>
+          <summary>
+            <span class="faq-q">Q.</span>
+            <span class="faq-title">まだ土地が決まっていませんが、相談に乗ってもらえますか？</span>
+          </summary>
+          <div class="faq-answer">
+            <p>もちろんです。希望エリアの風土・ 日照条件や総予算とのバランスを見据え、建築家の視点から土地探しと建物プランを同時にご提案いたします。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="faq-q">Q.</span>
+            <span class="faq-title">相談から完成までどれくらいの期間がかかりますか？</span>
+          </summary>
+          <div class="faq-answer">
+            <p>初回のご相談から完成・お引き渡しまで、標準的に約10ヶ月〜14ヶ月程度をいただいております。敷地条件やプランのこだわりによって調整可能です。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="faq-q">Q.</span>
+            <span class="faq-title">初回のご相談や敷地調査に費用は発生しますか？</span>
+          </summary>
+          <div class="faq-answer">
+            <p>初回のご相談、敷地の簡易調査、コンセプトのご提案段階までは無料で承るデモ設定です。正式な設計契約の前にご納得いただけるようご案内します。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="faq-q">Q.</span>
+            <span class="faq-title">施工対応エリアはどの範囲になりますか？</span>
+          </summary>
+          <div class="faq-answer">
+            <p>大阪府・兵庫県・京都府を中心とした関西一円に対応を想定しています。詳細な現地への施工対応についてはお気軽にお問い合わせください。</p>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="contact section" id="contact">
-      <p class="eyebrow">VISIT &amp; CONSULTATION</p>
-      <h2>まずは、理想の暮らしを<br>聞かせてください。</h2>
-      <p class="contact-lead">モデルハウス見学・家づくり相談を随時受け付けています。</p>
-      <form class="demo-form" id="demo-form">
-        <label>お名前<input name="name" autocomplete="name" required></label>
-        <label>メールアドレス<input name="email" type="email" autocomplete="email" required></label>
-        <label>ご希望内容
-          <select name="purpose">
-            <option>モデルハウスを見学したい</option>
-            <option>家づくりを相談したい</option>
-            <option>資料を見たい</option>
-          </select>
-        </label>
-        <label>ご希望日<input name="date" type="date"></label>
-        <label class="wide">ご質問・ご要望<textarea name="message" rows="4"></textarea></label>
-        <label class="consent wide"><input type="checkbox" required> デモサイトであることを確認しました</label>
-        <button class="button primary wide" type="submit">入力内容を確認する <span>→</span></button>
-        <p class="form-status wide" role="status"></p>
-      </form>
-      <p class="demo-footnote">このフォームはデモです。入力内容は送信・保存されません。</p>
+      <div class="contact-inner">
+        <div class="contact-header">
+          <p class="eyebrow"><span class="accent-dot"></span>VISIT &amp; CONSULTATION</p>
+          <h2>まずは、理想の暮らしを<br>お聞かせください。</h2>
+          <p class="contact-lead">モデルハウス見学・家づくり相談・資料請求を随時承っております。</p>
+        </div>
+
+        <form class="demo-form" id="demo-form">
+          <label>
+            <span class="label-text">お名前 <span class="req">必須</span></span>
+            <input name="name" autocomplete="name" placeholder="山田 太郎" required>
+          </label>
+          <label>
+            <span class="label-text">メールアドレス <span class="req">必須</span></span>
+            <input name="email" type="email" autocomplete="email" placeholder="example@rss7house.demo" required>
+          </label>
+          <label>
+            <span class="label-text">ご希望内容</span>
+            <select name="purpose">
+              <option>モデルハウスを見学したい</option>
+              <option>家づくりの無料相談をしたい</option>
+              <option>建築作品集・資料を取り寄せたい</option>
+            </select>
+          </label>
+          <label>
+            <span class="label-text">ご希望日</span>
+            <input name="date" type="date">
+          </label>
+          <label class="wide">
+            <span class="label-text">ご質問・ご要望</span>
+            <textarea name="message" rows="4" placeholder="建築予定地や、ご希望の住まいについて自由にご記入ください。"></textarea>
+          </label>
+          <label class="consent wide">
+            <input type="checkbox" required>
+            <span>デモサイトであることを確認しました（送信処理は行われません）</span>
+          </label>
+          <button class="button primary wide" type="submit">
+            <span>入力内容を確認する</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <p class="form-status wide" role="status"></p>
+        </form>
+        <p class="demo-footnote">※ このフォームはデモ表示です。入力された個人情報は送信および外部サーバーへ保存されません。</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <a class="logo" href="#top" aria-label="RSS7 HOUSE ホーム">
-      <svg class="logo-mark" aria-hidden="true"><use href="#rss7-mark" /></svg>
-      <span class="logo-type"><b>RSS7</b><i>HOUSE</i></span>
-    </a>
-    <p>関西で建てる、自由設計の家。</p>
-    <small>© 2026 RSS7 HOUSE — DEMO WEBSITE</small>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="#top" aria-label="RSS7 HOUSE ホーム">
+          <svg class="logo-mark" aria-hidden="true"><use href="#rss7-mark" /></svg>
+          <span class="logo-type">
+            <span class="brand-name"><b>RSS7</b><i>HOUSE</i></span>
+            <span class="brand-sub">ARCHITECTURAL STUDIO</span>
+          </span>
+        </a>
+        <p class="footer-tagline">関西で建てる、審美性と精度をあわせ持つ自由設計住宅。</p>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a href="#concept">思想</a>
+          <a href="#works">事例</a>
+          <a href="#quality">性能</a>
+          <a href="#flow">工程</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">相談</a>
+        </div>
+        <small class="copyright">© 2026 RSS7 HOUSE — CONCEPT DEMO WEBSITE</small>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
