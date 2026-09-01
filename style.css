@@ -44,7 +44,7 @@ ol{list-style:none}
 
 /* ---------- Header ---------- */
 .header{position:fixed;z-index:20;top:0;left:0;width:100%;height:86px;display:flex;align-items:center;gap:3vw;padding:0 4vw;color:#fff;transition:background .35s,color .35s,height .35s,box-shadow .35s}
-.header.scrolled{height:68px;background:rgba(244,241,233,.94);color:var(--ink);backdrop-filter:blur(12px);box-shadow:0 1px var(--line)}
+.header.scrolled{height:68px;background:rgba(244,241,233,.94);color:var(--ink);backdrop-filter:blur(12px);box-shadow:0 1px var(--line)}\nhtml:not(.js) .header{height:68px;background:var(--paper);color:var(--ink);box-shadow:0 1px var(--line)}
 .desktop-nav{display:flex;gap:2.2vw;margin-left:auto;font-size:12px;letter-spacing:.02em}
 .desktop-nav a{position:relative;padding:4px 0}
 .header-cta{border:1px solid currentColor;padding:13px 22px;font-size:12px;letter-spacing:.03em}
@@ -57,6 +57,19 @@ ol{list-style:none}
 }
 .menu-button{display:none;border:0;background:none;color:inherit;width:48px;height:48px}
 .menu-button span{display:block;width:25px;height:1px;background:currentColor;margin:7px auto;transition:transform .3s,opacity .3s}
+
+/* ---------- No-JS fallback nav ----------
+   Desktop always shows .desktop-nav regardless of JS. Below 800px the
+   header switches to a hamburger that only .js can open, so JS-disabled
+   visitors need this static, always-in-flow alternative instead. */
+.noscript-nav{display:none}
+@media(max-width:800px){
+  .noscript-nav{
+    display:flex;flex-wrap:wrap;gap:10px;
+    padding:calc(68px + 20px) 20px 20px;background:var(--paper);border-bottom:1px solid var(--line);
+  }
+  .noscript-nav a{font-size:13px;padding:9px 14px;border:1px solid var(--line)}
+}
 
 /* ---------- Mobile menu ---------- */
 .mobile-menu{display:none}
@@ -213,8 +226,8 @@ footer small{text-align:right;color:#89918e}
 /* ---------- Responsive ---------- */
 @media(max-width:800px){
   .header{height:68px;padding:0 20px}
-  .js .desktop-nav,.js .header-cta{display:none}
-  .js .menu-button{display:block;margin-left:auto}
+  .desktop-nav,.header-cta{display:none}
+  .menu-button{display:block;margin-left:auto}
   .hero-content{padding-left:24px;padding-right:24px}
   .hero>img{object-position:62% center}
   .hero h1{font-size:clamp(42px,15vw,56px);letter-spacing:-.04em}
