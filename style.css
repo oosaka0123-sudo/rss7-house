@@ -42,9 +42,17 @@ ol{list-style:none}
 .logo-type b{font-size:20px;letter-spacing:-.03em;font-weight:700}
 .logo-type i{font-size:8px;font-style:normal;letter-spacing:.38em;margin-top:7px}
 
-/* ---------- Header ---------- */
-.header{position:fixed;z-index:20;top:0;left:0;width:100%;height:86px;display:flex;align-items:center;gap:3vw;padding:0 4vw;color:#fff;transition:background .35s,color .35s,height .35s,box-shadow .35s}
-.header.scrolled{height:68px;background:rgba(244,241,233,.94);color:var(--ink);backdrop-filter:blur(12px);box-shadow:0 1px var(--line)}\nhtml:not(.js) .header{height:68px;background:var(--paper);color:var(--ink);box-shadow:0 1px var(--line)}
+/* ---------- Header ----------
+   Baseline (no .js class — JavaScript disabled or blocked) is the
+   solid, always-readable bar — the same style script.js used to add
+   only once scrolled. The transparent white-on-hero look is the
+   enhancement: with JS enabled, the .js class is set synchronously
+   before first paint, so it applies from the very first frame and is
+   then removed once .scrolled is added past 40px of scroll. A no-JS
+   visitor never gets stuck with low-contrast white text over a light
+   section — they just don't get the transparent-hero enhancement. */
+.header{position:fixed;z-index:20;top:0;left:0;width:100%;height:68px;display:flex;align-items:center;gap:3vw;padding:0 4vw;background:rgba(244,241,233,.94);color:var(--ink);backdrop-filter:blur(12px);box-shadow:0 1px var(--line);transition:background .35s,color .35s,height .35s,box-shadow .35s}
+.js .header:not(.scrolled){height:86px;background:transparent;color:#fff;backdrop-filter:none;box-shadow:none}
 .desktop-nav{display:flex;gap:2.2vw;margin-left:auto;font-size:12px;letter-spacing:.02em}
 .desktop-nav a{position:relative;padding:4px 0}
 .header-cta{border:1px solid currentColor;padding:13px 22px;font-size:12px;letter-spacing:.03em}
@@ -52,8 +60,8 @@ ol{list-style:none}
   .desktop-nav a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:1px;background:currentColor;transition:right .3s cubic-bezier(.2,.7,.2,1)}
   .desktop-nav a:hover::after{right:0}
   .header-cta{transition:background .25s,color .25s}
-  .header-cta:hover{background:currentColor;color:var(--surface)}
-  .header.scrolled .header-cta:hover{color:var(--paper)}
+  .header-cta:hover{background:var(--ink);color:var(--paper)}
+  .js .header:not(.scrolled) .header-cta:hover{background:#fff;color:var(--surface)}
 }
 .menu-button{display:none;border:0;background:none;color:inherit;width:48px;height:48px}
 .menu-button span{display:block;width:25px;height:1px;background:currentColor;margin:7px auto;transition:transform .3s,opacity .3s}
@@ -226,6 +234,7 @@ footer small{text-align:right;color:#89918e}
 /* ---------- Responsive ---------- */
 @media(max-width:800px){
   .header{height:68px;padding:0 20px}
+  .js .header:not(.scrolled){height:68px}
   .desktop-nav,.header-cta{display:none}
   .menu-button{display:block;margin-left:auto}
   .hero-content{padding-left:24px;padding-right:24px}
