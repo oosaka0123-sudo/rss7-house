@@ -1,0 +1,12 @@
+const header=document.querySelector('.header');
+const button=document.querySelector('.menu-button');
+const menu=document.querySelector('.mobile-menu');
+const setHeader=()=>header.classList.toggle('scrolled',scrollY>40);
+addEventListener('scroll',setHeader,{passive:true});setHeader();
+const setMenu=open=>{menu.classList.toggle('open',open);menu.toggleAttribute('inert',!open);menu.setAttribute('aria-hidden',String(!open));button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');document.body.classList.toggle('menu-open',open);if(open)menu.querySelector('a').focus()};
+button.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){setMenu(false);button.focus()}});
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});reveals.forEach(el=>observer.observe(el))}else reveals.forEach(el=>el.classList.add('visible'));
+document.querySelector('#demo-form').addEventListener('submit',e=>{e.preventDefault();e.currentTarget.querySelector('.form-status').textContent='デモ確認完了：入力内容は送信・保存されていません。'});
