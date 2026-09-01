@@ -51,8 +51,9 @@ document.querySelector('#demo-form').addEventListener('submit', (e) => {
     'デモ確認完了：入力内容は送信・保存されていません。';
 });
 
-// Scroll progress bar.
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Scroll progress bar. Always kept in sync — under prefers-reduced-motion
+// the global `transition:none` rule already makes this an instant snap
+// instead of an animated fill, so the feature itself stays available.
 const progress = document.querySelector('.progress');
 let ticking = false;
 const updateProgress = () => {
@@ -60,12 +61,10 @@ const updateProgress = () => {
   progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
   ticking = false;
 };
-if (!reduceMotion) {
-  addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateProgress);
-      ticking = true;
-    }
-  }, { passive: true });
-  updateProgress();
-}
+addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(updateProgress);
+    ticking = true;
+  }
+}, { passive: true });
+updateProgress();
