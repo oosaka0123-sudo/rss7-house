@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "managed_by": "oosaka0123-sudo/ai-agent",
+  "project": {
+    "slug": "rss7-house",
+    "name": "RSS7 HOUSE",
+    "repository": "oosaka0123-sudo/rss7-house",
+    "public_url": null,
+    "role": "web-pwa-production"
+  },
+  "automation": {
+    "media": {
+      "enabled": true,
+      "provider": "auto",
+      "control_plane_project": "rss7-ai-media",
+      "fallback_provider": "higgsfield"
+    },
+    "publish_policy": "preview-first",
+    "direct_main_push": false
+  }
+}
