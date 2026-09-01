@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RSS7 HOUSEへのモデルハウス見学・無料家づくり相談・資料請求フォーム。関西で自由設計の注文住宅を検討される方向けのデモ窓口です。">
+  <meta name="theme-color" content="#1A1A17">
+  <title>CONTACT｜RSS7 HOUSE - 来場予約・家づくりのご相談</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="mark-defs" aria-hidden="true" focusable="false">
+    <symbol id="rss7-mark" viewBox="0 0 64 64">
+      <path d="M12 14H48M12 14V50M48 14 22 54" />
+      <path class="mark-ticks" d="M12 24H20M12 32H20M12 40H20" />
+    </symbol>
+  </svg>
+
+  <div class="progress" aria-hidden="true"></div>
+  <div class="demo-notice" role="region" aria-label="デモサイトに関する注記">CONCEPT DEMO — 掲載内容・実績・性能値は架空のデモ情報です</div>
+  <a class="skip" href="#main">本文へ移動</a>
+
+  <header class="header" id="header">
+    <a class="logo" href="index.html" aria-label="RSS7 HOUSE ホーム">
+      <svg class="logo-mark" aria-hidden="true"><use href="#rss7-mark" /></svg>
+      <span class="logo-type"><b>RSS7</b><i>HOUSE</i></span>
+    </a>
+    <div class="header-right">
+      <a class="header-cta" href="contact.html" aria-current="page">来場予約</a>
+      <button class="menu-button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <noscript>
+    <nav class="noscript-nav" aria-label="メインナビゲーション（JavaScript無効時）">
+      <a href="index.html">HOME</a>
+      <a href="concept.html">CONCEPT</a>
+      <a href="works.html">WORKS</a>
+      <a href="quality.html">QUALITY</a>
+      <a href="contact.html" aria-current="page">CONTACT</a>
+    </nav>
+  </noscript>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-label">NAVIGATION</div>
+      <nav aria-label="全画面ナビゲーション">
+        <a href="index.html"><span class="nav-num">01</span> HOME</a>
+        <a href="concept.html"><span class="nav-num">02</span> CONCEPT</a>
+        <a href="works.html"><span class="nav-num">03</span> WORKS</a>
+        <a href="quality.html"><span class="nav-num">04</span> QUALITY</a>
+        <a href="contact.html" aria-current="page"><span class="nav-num">05</span> CONTACT</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="contact section">
+      <p class="eyebrow">05 / VISIT &amp; CONSULTATION</p>
+      <h1 class="contact-page-title">理想の暮らしを、<br>聞かせてください。</h1>
+      <p class="contact-lead">モデルハウス見学・家づくり相談・敷地調査のご依頼を随時受け付けています。</p>
+
+      <form class="demo-form" id="demo-form">
+        <label>お名前<input name="name" autocomplete="name" required></label>
+        <label>メールアドレス<input name="email" type="email" autocomplete="email" required></label>
+        <label>ご希望内容
+          <select name="purpose">
+            <option>モデルハウスを見学したい</option>
+            <option>家づくりを相談したい</option>
+            <option>資料を見たい</option>
+          </select>
+        </label>
+        <label>ご希望日<input name="date" type="date"></label>
+        <label class="wide">ご質問・ご要望<textarea name="message" rows="4"></textarea></label>
+        <label class="consent wide"><input type="checkbox" required> デモサイトであることを確認しました</label>
+        <button class="button primary wide" type="submit">入力内容を確認する <span>→</span></button>
+        <p class="form-status wide" role="status"></p>
+      </form>
+
+      <p class="demo-footnote" style="margin-top: 35px;">※ このフォームはコンセプトデモです。入力した情報は外部に送信・保存されません。</p>
+    </section>
+
+    <section class="faq section" id="faq">
+      <div class="section-head">
+        <div><div class="section-label reveal-fade">FAQ</div><h2 class="reveal-mask"><span>よくあるご質問。</span></h2></div>
+        <p class="reveal-fade">家づくりを始める前の、<br>よくある疑問にお答えします。</p>
+      </div>
+      <div class="faq-list">
+        <details><summary>土地が決まっていなくても相談できますか？</summary><p>はい。ご希望の地域や暮らし方、ご予算を伺い、土地探しと建物計画を一緒に進める想定です。</p></details>
+        <details><summary>完成までの期間はどれくらいですか？</summary><p>初回相談から完成まで約10〜14か月が一般的な目安です。土地や設計内容により変わります。</p></details>
+        <details><summary>相談やモデルハウス見学は有料ですか？</summary><p>初回相談と見学は無料というデモ設定です。実際のサービス開始時に正式条件をご案内します。</p></details>
+      </div>
+
+      <div style="margin-top: 60px;" class="reveal-fade">
+        <a class="text-link" href="index.html">ホームに戻る <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <a class="logo" href="index.html" aria-label="RSS7 HOUSE ホーム">
+        <svg class="logo-mark" aria-hidden="true"><use href="#rss7-mark" /></svg>
+        <span class="logo-type"><b>RSS7</b><i>HOUSE</i></span>
+      </a>
+      <p>関西で建てる、自由設計の家。</p>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <a href="index.html">HOME</a>
+        <a href="concept.html">CONCEPT</a>
+        <a href="works.html">WORKS</a>
+        <a href="quality.html">QUALITY</a>
+        <a href="contact.html" aria-current="page">CONTACT</a>
+      </nav>
+    </div>
+    <small>© 2026 RSS7 HOUSE — DEMO WEBSITE</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
