@@ -58,6 +58,19 @@ ol{list-style:none}
 .menu-button{display:none;border:0;background:none;color:inherit;width:48px;height:48px}
 .menu-button span{display:block;width:25px;height:1px;background:currentColor;margin:7px auto;transition:transform .3s,opacity .3s}
 
+/* ---------- No-JS fallback nav ----------
+   Desktop always shows .desktop-nav regardless of JS. Below 800px the
+   header switches to a hamburger that only .js can open, so JS-disabled
+   visitors need this static, always-in-flow alternative instead. */
+.noscript-nav{display:none}
+@media(max-width:800px){
+  .noscript-nav{
+    display:flex;flex-wrap:wrap;gap:10px;
+    padding:calc(68px + 20px) 20px 20px;background:var(--paper);border-bottom:1px solid var(--line);
+  }
+  .noscript-nav a{font-size:13px;padding:9px 14px;border:1px solid var(--line)}
+}
+
 /* ---------- Mobile menu ---------- */
 .mobile-menu{display:none}
 @media(max-width:800px){
