@@ -213,8 +213,8 @@ footer small{text-align:right;color:#89918e}
 /* ---------- Responsive ---------- */
 @media(max-width:800px){
   .header{height:68px;padding:0 20px}
-  .desktop-nav,.header-cta{display:none}
-  .menu-button{display:block;margin-left:auto}
+  .js .desktop-nav,.js .header-cta{display:none}
+  .js .menu-button{display:block;margin-left:auto}
   .hero-content{padding-left:24px;padding-right:24px}
   .hero>img{object-position:62% center}
   .hero h1{font-size:clamp(42px,15vw,56px);letter-spacing:-.04em}
