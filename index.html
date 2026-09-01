@@ -10,10 +10,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="cursor" aria-hidden="true"><span>VIEW</span></div>
+  <div class="progress" aria-hidden="true"></div>
   <div class="demo-notice">CONCEPT DEMO — 掲載内容・実績・性能値は架空のデモ情報です</div>
   <a class="skip" href="#main">本文へ移動</a>
   <header class="header" id="header">
-    <a class="logo" href="#top" aria-label="RSS7 HOUSE ホーム"><span>RSS7</span> HOUSE</a>
+    <a class="logo" href="#top" aria-label="RSS7 HOUSE ホーム"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M7 25 32 6l25 19v32H39V38H25v19H7Z"/><path class="logo-seven" d="M24 22h19L29 45"/></svg><span class="logo-type"><b>RSS7</b><i>HOUSE</i></span></a>
     <nav class="desktop-nav" aria-label="メインナビゲーション">
       <a href="#concept">私たちの家づくり</a><a href="#works">施工事例</a><a href="#quality">性能</a><a href="#flow">家づくりの流れ</a>
     </nav>
@@ -31,12 +33,14 @@
       <div class="hero-shade"></div>
       <div class="hero-content">
         <p class="eyebrow">CUSTOM HOMES IN KANSAI</p>
-        <h1>暮らしを、<br>もっと自由に。</h1>
+        <h1><span>暮らしを、</span><br><span>もっと自由に。</span></h1>
         <p class="hero-copy">家族の数だけ、心地よさがある。<br>土地と暮らしから考える、あなただけの住まい。</p>
         <a class="text-link light" href="#concept">RSS7 HOUSEを知る <span>↗</span></a>
       </div>
       <p class="scroll">SCROLL <i></i></p>
     </section>
+
+    <div class="marquee" aria-hidden="true"><div><span>DESIGN YOUR LIFE</span><i>◆</i><span>LIVE YOUR WAY</span><i>◆</i><span>RSS7 HOUSE</span><i>◆</i><span>DESIGN YOUR LIFE</span><i>◆</i><span>LIVE YOUR WAY</span><i>◆</i><span>RSS7 HOUSE</span><i>◆</i></div></div>
 
     <section class="intro section" id="concept">
       <div class="section-label">01 / PHILOSOPHY</div>
@@ -91,7 +95,7 @@
     </section>
   </main>
 
-  <footer><a class="logo" href="#top"><span>RSS7</span> HOUSE</a><p>関西で建てる、自由設計の家。</p><small>© 2026 RSS7 HOUSE — DEMO WEBSITE</small></footer>
+  <footer><a class="logo" href="#top" aria-label="RSS7 HOUSE ホーム"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M7 25 32 6l25 19v32H39V38H25v19H7Z"/><path class="logo-seven" d="M24 22h19L29 45"/></svg><span class="logo-type"><b>RSS7</b><i>HOUSE</i></span></a><p>関西で建てる、自由設計の家。</p><small>© 2026 RSS7 HOUSE — DEMO WEBSITE</small></footer>
   <script src="script.js"></script>
 </body>
 </html>
