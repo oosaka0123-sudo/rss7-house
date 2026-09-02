@@ -16,9 +16,10 @@ This repository is registered with the shared AI control plane.
 The control plane provides shared AI media generation -- Google Vertex AI
 (Imagen / Veo) today, Higgsfield planned -- as a Remote HTTP MCP server, so
 Claude Code in this repository can call `generate_image` / `generate_video`
-directly. No generation code, credentials, or Google Cloud project
-configuration is copied into this repository: `.mcp.json` only points at
-the shared server's URL.
+directly. No generation code, Google Cloud project configuration, or actual
+credential value is copied into this repository: `.mcp.json` only configures
+how to reach the shared server -- its URL and an environment-variable-backed
+bearer token, resolved at run time rather than stored here.
 
 Generation logs, provider routing, and future cross-project automation are
 also shared this way, without copying implementation into every site.
