@@ -73,7 +73,51 @@ document.querySelectorAll('video').forEach((video) => {
 });
 
 const dialog = document.querySelector('[data-dialog]');
-document.querySelector('[data-open-dialog]').addEventListener('click', () => dialog.showModal());
+const bookingForm = document.querySelector('[data-booking-form]');
+const bookingSteps = [...document.querySelectorAll('[data-booking-step]')];
+const bookingComplete = document.querySelector('[data-booking-complete]');
+const stepNumber = document.querySelector('[data-step-number]');
+const progress = document.querySelector('[data-progress]');
+let currentBookingStep = 1;
+
+const showBookingStep = (nextStep) => {
+  currentBookingStep = nextStep;
+  bookingComplete.hidden = true;
+  bookingSteps.forEach((step) => {
+    const active = Number(step.dataset.bookingStep) === nextStep;
+    step.hidden = !active;
+    step.classList.toggle('is-active', active);
+  });
+  stepNumber.textContent = String(nextStep);
+  progress.style.width = `${nextStep * 33.333}%`;
+  document.querySelector(`#booking-step-${nextStep}`)?.focus({ preventScroll: true });
+};
+
+const updateBookingSummary = () => {
+  const data = new FormData(bookingForm);
+  document.querySelector('[data-summary-plan]').textContent = data.get('plan');
+  document.querySelector('[data-summary-people]').textContent = data.get('people');
+  document.querySelector('[data-summary-experience]').textContent = data.get('experience');
+};
+
+document.querySelector('[data-open-dialog]').addEventListener('click', () => {
+  bookingForm.reset();
+  showBookingStep(1);
+  dialog.showModal();
+});
+document.querySelectorAll('[data-next]').forEach((button) => button.addEventListener('click', () => {
+  const next = Math.min(currentBookingStep + 1, 3);
+  if (next === 3) updateBookingSummary();
+  showBookingStep(next);
+}));
+document.querySelectorAll('[data-back]').forEach((button) => button.addEventListener('click', () => showBookingStep(Math.max(currentBookingStep - 1, 1))));
+document.querySelector('[data-preview-complete]').addEventListener('click', () => {
+  bookingSteps.forEach((step) => step.hidden = true);
+  bookingComplete.hidden = false;
+  stepNumber.textContent = '3';
+  progress.style.width = '100%';
+  bookingComplete.querySelector('h3').focus({ preventScroll: true });
+});
 document.querySelectorAll('[data-close-dialog]').forEach((button) => button.addEventListener('click', () => dialog.close()));
 dialog.addEventListener('click', (event) => {
   if (event.target === dialog) dialog.close();
