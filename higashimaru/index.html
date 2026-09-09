@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071624">
+  <meta name="description" content="乗合船 東丸のコンセプトプレビュー。空席情報、船上体験、はじめての方へのご案内、予約導線をご覧いただけます。">
+  <title>東丸 HIGASHIMARU｜海へ出る。</title>
+  <link rel="preload" as="image" href="media/hero-boat.webp" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="東丸 トップへ">
+      <span class="brand-mark" aria-hidden="true">東</span>
+      <span><b>東丸</b><small>HIGASHIMARU</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="メインメニュー">
+      <a href="#schedule">空席情報</a>
+      <a href="#catch">釣果イメージ</a>
+      <a href="#experience">船上体験</a>
+      <a href="#first">はじめての方へ</a>
+      <a class="nav-cta" href="#reservation">ご予約について</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+      <span class="sr-only">メニューを開く</span><i></i><i></i>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルメニュー" aria-hidden="true" data-mobile-menu>
+    <a href="#schedule"><span>01</span>空席情報</a>
+    <a href="#catch"><span>02</span>釣果イメージ</a>
+    <a href="#experience"><span>03</span>船上体験</a>
+    <a href="#first"><span>04</span>はじめての方へ</a>
+    <a href="#reservation"><span>05</span>ご予約について</a>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/hero-boat.webp" data-video>
+        <source src="media/hero-boat.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-topline">
+        <span>CONCEPT PREVIEW</span><span>JAPANESE CHARTER FISHING</span>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">HIGASHIMARU / 海と釣りを、まっすぐに。</p>
+        <h1 id="hero-title">海へ出る。<br><em>釣る時間まで、最高に。</em></h1>
+        <p class="preview-note">東丸サイト制作中<br>掲載内容は公開準備中のため一部仮表示です</p>
+      </div>
+      <button class="video-toggle" type="button" data-video-toggle aria-label="背景動画を一時停止">PAUSE</button>
+      <a class="scroll-cue" href="#schedule"><span>SCROLL</span><i></i></a>
+    </section>
+
+    <section class="section schedule" id="schedule" aria-labelledby="schedule-title">
+      <div class="section-head reveal">
+        <p class="section-index">01 / SCHEDULE</p>
+        <h2 id="schedule-title">次の海へ。<br>空席をひと目で。</h2>
+        <p>直近の出船予定は公開準備中です。正式公開後は、日付・釣りもの・残席をここで確認できます。</p>
+      </div>
+      <div class="schedule-board reveal" role="table" aria-label="出船予定の準備表示">
+        <div class="schedule-row schedule-labels" role="row">
+          <span role="columnheader">DATE</span><span role="columnheader">PLAN</span><span role="columnheader">STATUS</span>
+        </div>
+        <div class="schedule-row" role="row"><time role="cell">近日公開</time><strong role="cell">出船予定を準備中</strong><span role="cell">WEB予約準備中</span></div>
+        <div class="schedule-row" role="row"><time role="cell">近日公開</time><strong role="cell">釣りものを準備中</strong><span role="cell">受付前</span></div>
+        <div class="schedule-row" role="row"><time role="cell">近日公開</time><strong role="cell">運航情報を準備中</strong><span role="cell">受付前</span></div>
+      </div>
+    </section>
+
+    <section class="section catch" id="catch" aria-labelledby="catch-title">
+      <div class="section-head reveal">
+        <p class="section-index">02 / CATCH</p>
+        <h2 id="catch-title">今日の海を、<br>次の一釣へ。</h2>
+        <p>釣果写真・魚種・ポイント情報を、見やすく更新できる構成です。現在の写真はサイト表現確認用のイメージです。</p>
+      </div>
+      <div class="catch-grid">
+        <figure class="catch-feature reveal"><img src="media/hero-boat.webp" width="1280" height="720" alt="朝の海を航走する東丸のイメージ" loading="lazy"><figcaption><small>IMAGE / 01</small><strong>朝の海へ</strong><span>公開準備中のイメージ</span></figcaption></figure>
+        <figure class="catch-small reveal"><img src="media/deck-sea.webp" width="1280" height="720" alt="釣り竿を備えた船上デッキのイメージ" loading="lazy"><figcaption><small>IMAGE / 02</small><strong>船上の時間</strong><span>公開準備中のイメージ</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="film-section" id="experience" aria-labelledby="experience-title">
+      <video autoplay muted loop playsinline preload="none" poster="media/deck-sea.webp" data-video>
+        <source src="media/deck-sea.mp4" type="video/mp4">
+      </video>
+      <div class="film-shade"></div>
+      <div class="film-copy reveal">
+        <p class="section-index">03 / EXPERIENCE</p>
+        <h2 id="experience-title">海の近さが、<br>一日の記憶になる。</h2>
+        <p>道具を置く場所、移動のしやすさ、海を見渡す視界。はじめての方にも分かりやすい船上体験をご案内します。</p>
+      </div>
+    </section>
+
+    <section class="section first" id="first" aria-labelledby="first-title">
+      <div class="section-head reveal">
+        <p class="section-index">04 / FIRST TRIP</p>
+        <h2 id="first-title">はじめてでも、<br>迷わない。</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><span>01</span><div><h3>予約する</h3><p>希望日と釣りものを選択。本番版では空席を見ながら3ステップで予約できます。</p></div></li>
+        <li class="reveal"><span>02</span><div><h3>港へ向かう</h3><p>集合場所・時間・持ちものを事前に分かりやすくご案内します。</p></div></li>
+        <li class="reveal"><span>03</span><div><h3>海へ出る</h3><p>乗船後は船長の案内に沿って出船。安全に配慮して釣りを楽しみます。</p></div></li>
+      </ol>
+    </section>
+
+    <section class="reservation" id="reservation" aria-labelledby="reservation-title">
+      <video autoplay muted loop playsinline preload="none" poster="media/sunset-return.webp" data-video>
+        <source src="media/sunset-return.mp4" type="video/mp4">
+      </video>
+      <div class="film-shade"></div>
+      <div class="reservation-copy reveal">
+        <p class="section-index">05 / RESERVATION</p>
+        <h2 id="reservation-title">次の休日を、<br>海の上で。</h2>
+        <p>Web予約・電話・LINEの受付導線は、正式情報の確認後に公開します。</p>
+        <button class="outline-button" type="button" data-open-dialog>ご予約について確認する <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark" aria-hidden="true">東</span><span><b>東丸</b><small>HIGASHIMARU</small></span></div>
+    <p>CONCEPT PREVIEW — 掲載内容は公開準備中です</p>
+    <small>© HIGASHIMARU</small>
+  </footer>
+
+  <dialog class="reservation-dialog" data-dialog aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="閉じる">×</button>
+    <p class="section-index">RESERVATION PREVIEW</p>
+    <h2 id="dialog-title">予約機能は準備中です。</h2>
+    <p>現在はラフ画面のため、実際の予約送信はできません。正式な受付方法は公開時にご案内します。</p>
+    <button class="dialog-button" type="button" data-close-dialog>画面に戻る</button>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
