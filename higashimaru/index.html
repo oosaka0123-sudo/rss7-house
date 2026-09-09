@@ -128,11 +128,43 @@
   </footer>
 
   <dialog class="reservation-dialog" data-dialog aria-labelledby="dialog-title">
-    <button class="dialog-close" type="button" data-close-dialog aria-label="閉じる">×</button>
-    <p class="section-index">RESERVATION PREVIEW</p>
-    <h2 id="dialog-title">予約機能は準備中です。</h2>
-    <p>現在はラフ画面のため、実際の予約送信はできません。正式な受付方法は公開時にご案内します。</p>
-    <button class="dialog-button" type="button" data-close-dialog>画面に戻る</button>
+    <button class="dialog-close" type="button" data-close-dialog aria-label="予約画面を閉じる">×</button>
+    <div class="booking-head">
+      <div><p class="section-index">RESERVATION PREVIEW</p><h2 id="dialog-title">東丸 Web予約</h2></div>
+      <p class="booking-step-label" aria-live="polite"><b data-step-number>1</b> / 3</p>
+    </div>
+    <div class="booking-progress" aria-hidden="true"><i data-progress></i></div>
+    <form class="booking-form" data-booking-form novalidate>
+      <section class="booking-step is-active" data-booking-step="1" aria-labelledby="booking-step-1">
+        <p class="booking-kicker">STEP 01</p><h3 id="booking-step-1" tabindex="-1">ご希望を選択</h3>
+        <fieldset class="choice-grid"><legend class="sr-only">予約内容</legend>
+          <label><input type="radio" name="plan" value="乗合便を予約" checked><span><b>乗合便を予約</b><small>空席表から選択予定</small></span></label>
+          <label><input type="radio" name="plan" value="仕立てについて相談"><span><b>仕立てについて相談</b><small>詳細は正式公開時に案内</small></span></label>
+          <label><input type="radio" name="plan" value="船長に相談"><span><b>船長に相談</b><small>釣りもの・日程が未定の方</small></span></label>
+        </fieldset>
+        <div class="booking-actions"><button class="booking-next" type="button" data-next>次へ進む <span>→</span></button></div>
+      </section>
+      <section class="booking-step" data-booking-step="2" aria-labelledby="booking-step-2" hidden>
+        <p class="booking-kicker">STEP 02</p><h3 id="booking-step-2" tabindex="-1">人数と経験</h3>
+        <div class="booking-fields">
+          <label>乗船人数<select name="people"><option value="1名">1名</option><option value="2名">2名</option><option value="3名">3名</option><option value="4名">4名</option><option value="5名以上">5名以上</option></select></label>
+          <fieldset><legend>乗合船の経験</legend><div class="inline-choices"><label><input type="radio" name="experience" value="はじめて" checked> はじめて</label><label><input type="radio" name="experience" value="経験あり"> 経験あり</label></div></fieldset>
+        </div>
+        <p class="booking-help">日付・料金・集合港は、正式情報の登録後にこのステップへ追加します。</p>
+        <div class="booking-actions"><button class="booking-back" type="button" data-back>戻る</button><button class="booking-next" type="button" data-next>確認へ <span>→</span></button></div>
+      </section>
+      <section class="booking-step" data-booking-step="3" aria-labelledby="booking-step-3" hidden>
+        <p class="booking-kicker">STEP 03</p><h3 id="booking-step-3" tabindex="-1">内容を確認</h3>
+        <dl class="booking-summary"><div><dt>ご希望</dt><dd data-summary-plan>乗合便を予約</dd></div><div><dt>人数</dt><dd data-summary-people>1名</dd></div><div><dt>経験</dt><dd data-summary-experience>はじめて</dd></div></dl>
+        <div class="preview-warning"><b>CONCEPT PREVIEW</b><p>現在はラフ画面です。個人情報の入力・予約送信は行いません。</p></div>
+        <div class="booking-actions"><button class="booking-back" type="button" data-back>戻る</button><button class="booking-next" type="button" data-preview-complete>仮予約の流れを完了</button></div>
+      </section>
+      <section class="booking-step booking-complete" data-booking-complete hidden aria-live="polite">
+        <p class="booking-complete-mark" aria-hidden="true">✓</p><p class="booking-kicker">PREVIEW COMPLETE</p>
+        <h3 tabindex="-1">予約の流れを確認できました。</h3><p>正式公開後は、このあと連絡先入力と予約受付通知へ進みます。</p>
+        <button class="dialog-button" type="button" data-close-dialog>画面に戻る</button>
+      </section>
+    </form>
   </dialog>
 
   <script src="script.js" defer></script>
