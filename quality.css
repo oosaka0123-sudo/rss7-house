@@ -1,5 +1,5 @@
-/* QUALITY page — realistic editorial layout */
-.quality-hero-visual{position:relative;min-height:58vh;background:linear-gradient(90deg,rgba(18,23,20,.76),rgba(18,23,20,.18)),url(assets/exterior-sunset.webp) center/cover no-repeat;color:#fff;display:flex;align-items:end;padding:150px 7vw 70px}
+/* QUALITY page — new-build editorial layout */
+.quality-hero-visual{position:relative;min-height:62vh;background:linear-gradient(90deg,rgba(18,23,20,.78),rgba(18,23,20,.16)),url(assets/hero-house.webp) center/cover no-repeat;color:#fff;display:flex;align-items:end;padding:150px 7vw 70px}
 .quality-hero-visual .page-banner-content{max-width:900px}
 .quality-kicker{display:inline-flex;gap:10px;align-items:center;font-size:11px;letter-spacing:.2em;font-weight:700;color:#f0d7ca}
 .quality-kicker::before{content:'';width:42px;height:1px;background:var(--accent)}
@@ -20,8 +20,10 @@
 .quality-chapters{background:var(--paper-deep)}
 .quality-chapter{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:#fff;margin-bottom:34px}
 .quality-chapter:nth-child(even) .quality-chapter-media{order:2}
-.quality-chapter-media{position:relative;overflow:hidden;min-height:480px}
+.quality-chapter-media{position:relative;overflow:hidden;min-height:480px;background:#d8d8d1}
 .quality-chapter-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.quality-chapter-newbuild .quality-chapter-media img{object-position:center 55%}
+.photo-badge{position:absolute;z-index:2;left:20px;bottom:20px;background:rgba(16,20,15,.78);color:#fff;padding:9px 12px;font-size:9px;letter-spacing:.16em;font-weight:700;backdrop-filter:blur(8px)}
 .quality-chapter-body{padding:clamp(38px,5vw,76px);display:flex;flex-direction:column;justify-content:center}
 .quality-chapter-num{font-size:10px;letter-spacing:.2em;color:var(--accent);font-weight:700}
 .quality-chapter h3{font-family:var(--serif);font-size:clamp(30px,3.6vw,54px);line-height:1.35;font-weight:500;margin:16px 0 22px}
@@ -52,5 +54,25 @@
 .quality-cta{text-align:center;background:var(--accent-deep);color:#fff}
 .quality-cta h2{max-width:900px;margin:18px auto 24px}
 .quality-cta p{font-family:var(--serif);line-height:2;color:#eadbd5}
-@media(max-width:900px){.quality-summary-grid,.quality-flow-head,.quality-proof,.quality-after-grid{grid-template-columns:1fr}.quality-chapter{grid-template-columns:1fr;min-height:0}.quality-chapter:nth-child(even) .quality-chapter-media{order:0}.quality-chapter-media{min-height:420px}.quality-steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.quality-hero-visual{min-height:72svh;padding:120px 24px 54px;background-position:58% center}.quality-targets{grid-template-columns:1fr}.quality-target{min-height:0;padding:22px}.quality-gallery-strip{grid-template-columns:1fr;margin-top:38px}.quality-gallery-strip img{height:auto;aspect-ratio:4/3}.quality-chapter-media{min-height:300px}.quality-chapter-body{padding:34px 24px}.quality-points li{grid-template-columns:72px 1fr}.quality-steps{grid-template-columns:1fr}.quality-proof{margin-top:48px}.quality-after-list{display:grid;grid-template-columns:1fr 1fr}.quality-after-list span{text-align:center}.quality-cta .button{max-width:360px;margin-inline:auto}}
+@media(max-width:900px){
+  .quality-summary-grid,.quality-flow-head,.quality-proof,.quality-after-grid{grid-template-columns:1fr}
+  .quality-chapter{grid-template-columns:1fr;min-height:0}
+  .quality-chapter:nth-child(even) .quality-chapter-media{order:0}
+  .quality-chapter-media{min-height:420px}
+  .quality-steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .quality-hero-visual{min-height:72svh;padding:120px 24px 54px;background-position:58% center}
+  .quality-targets{grid-template-columns:1fr}
+  .quality-target{min-height:0;padding:22px}
+  .quality-gallery-strip{grid-template-columns:1fr;margin-top:38px}
+  .quality-gallery-strip img{height:auto;aspect-ratio:4/3}
+  .quality-chapter-media{min-height:300px}
+  .quality-chapter-body{padding:34px 24px}
+  .quality-points li{grid-template-columns:72px 1fr}
+  .quality-steps{grid-template-columns:1fr}
+  .quality-proof{margin-top:48px}
+  .quality-after-list{display:grid;grid-template-columns:1fr 1fr}
+  .quality-after-list span{text-align:center}
+  .quality-cta .button{max-width:360px;margin-inline:auto}
+}
