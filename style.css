@@ -1,4 +1,4 @@
-/* ---------- Tokens ---------- */
+﻿/* ---------- Tokens ---------- */
 :root{
   --ink:#1a1a17;
   --paper:#f4f1e9;
@@ -251,8 +251,10 @@ footer .footer-nav a[aria-current="page"]{color:var(--focus);text-decoration:und
 @media(max-width:800px){
   .header{height:68px;padding:0 20px}
   .js .header:not(.scrolled){height:68px}
-  .hero-content{padding-left:24px;padding-right:24px}
-  .hero>img,.hero>.hero-video{object-position:62% center}
+  .hero-content{position:absolute;left:0;right:0;top:20vh;max-width:100%;padding:0 24px 100px}
+  .hero>img,.hero>.hero-video{object-position:64% center}
+  .hero .reveal-fade{opacity:1!important;transform:none!important}
+  .hero .reveal-mask span{clip-path:inset(0 0 0 0)!important}
   .hero h1{font-size:clamp(40px,13vw,56px);letter-spacing:-.04em}
   .hero-datum{left:24px;top:90px}
   .hero-datum i{height:70px}
@@ -290,7 +292,7 @@ footer .footer-nav a[aria-current="page"]{color:var(--focus);text-decoration:und
 @media(prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
   .js .reveal-fade,.js .reveal-mask span,.js .reveal-image .project-image{opacity:1!important;transform:none!important;clip-path:inset(0 0 0 0)!important}
-  .hero>img{transform:none}
+  .hero>img,.hero>.hero-video{transform:none}
 }
 
 
@@ -312,3 +314,4 @@ footer .footer-nav a[aria-current="page"]{color:var(--focus);text-decoration:und
   .photo-mosaic-rich .photo-wide{grid-column:auto}
   .photo-tile img,.photo-tile.photo-wide img{aspect-ratio:4/3}
 }
+
