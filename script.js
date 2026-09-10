@@ -91,3 +91,12 @@ if (progress) {
   }, { passive: true });
   updateProgress();
 }
+
+
+// Respect reduced-motion preference for the cinematic hero.
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const freezeHero = () => { heroVideo.pause(); heroVideo.currentTime = 0; };
+  if (heroVideo.readyState >= 1) freezeHero();
+  else heroVideo.addEventListener('loadedmetadata', freezeHero, { once: true });
+}
