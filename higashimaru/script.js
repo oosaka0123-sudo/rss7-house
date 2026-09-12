@@ -80,9 +80,11 @@ if (dialog && bookingForm) {
   const bookingComplete = document.querySelector('[data-booking-complete]');
   const stepNumber = document.querySelector('[data-step-number]');
   const progress = document.querySelector('[data-progress]');
+  const bookingError = document.querySelector('[data-booking-error]');
   let currentBookingStep = 1;
   const showBookingStep = (nextStep) => {
     currentBookingStep = nextStep;
+    if (bookingError) bookingError.textContent = '';
     bookingComplete.hidden = true;
     bookingSteps.forEach((step) => step.hidden = Number(step.dataset.bookingStep) !== nextStep);
     stepNumber.textContent = String(nextStep);
@@ -95,8 +97,16 @@ if (dialog && bookingForm) {
     document.querySelector('[data-summary-people]').textContent = data.get('people');
     document.querySelector('[data-summary-experience]').textContent = data.get('experience');
   };
+  const validateBookingStep = (step) => {
+    if (step !== 2) return true;
+    const people = bookingForm.querySelector('select[name="people"]')?.value;
+    const experience = bookingForm.querySelector('input[name="experience"]:checked');
+    if (people && experience) return true;
+    if (bookingError) bookingError.textContent = '人数と乗合船の経験を確認してください。';
+    return false;
+  };
   document.querySelector('[data-open-dialog]')?.addEventListener('click', () => { bookingForm.reset(); showBookingStep(1); dialog.showModal(); });
-  document.querySelectorAll('[data-next]').forEach((button) => button.addEventListener('click', () => { const next = Math.min(currentBookingStep + 1, 3); if (next === 3) updateSummary(); showBookingStep(next); }));
+  document.querySelectorAll('[data-next]').forEach((button) => button.addEventListener('click', () => { if (!validateBookingStep(currentBookingStep)) return; const next = Math.min(currentBookingStep + 1, 3); if (next === 3) updateSummary(); showBookingStep(next); }));
   document.querySelectorAll('[data-back]').forEach((button) => button.addEventListener('click', () => showBookingStep(Math.max(currentBookingStep - 1, 1))));
   document.querySelector('[data-preview-complete]')?.addEventListener('click', () => { bookingSteps.forEach((step) => step.hidden = true); bookingComplete.hidden = false; progress.style.width = '100%'; bookingComplete.querySelector('h3')?.focus({ preventScroll: true }); });
   document.querySelectorAll('[data-close-dialog]').forEach((button) => button.addEventListener('click', () => dialog.close()));

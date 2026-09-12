@@ -25,3 +25,18 @@ footer{display:grid;grid-template-columns:1fr auto auto;gap:40px;align-items:end
 .page-hero{position:relative;min-height:58svh;display:flex;align-items:flex-end;padding:120px clamp(20px,8vw,128px) 70px;color:#fff;background:var(--navy);overflow:hidden}.page-hero::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.78)}.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,15,25,.7),rgba(4,15,25,.2)),linear-gradient(0deg,rgba(4,15,25,.65),transparent)}.page-hero>div{position:relative;z-index:1}.page-hero h1,.guide-hero h1,.reservation-page h1{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(48px,7vw,96px);font-weight:500;line-height:1.12}.page-hero p:last-child{margin:18px 0 0}.page-hero-schedule::before{background-image:url("media/hero-boat.webp")}.page-hero-catch::before{background-image:url("media/harbor-dawn.webp")}.guide-hero,.reservation-page{min-height:100svh}.guide-hero .film-copy,.reservation-page .reservation-copy{margin-bottom:clamp(65px,9vw,120px)}.guide-hero .film-copy>p:last-child{max-width:570px}.reservation-page .reservation-copy>p{max-width:570px}.text-link{display:inline-block;margin-top:46px;padding-bottom:4px;border-bottom:1px solid currentColor;font-weight:600}
 @media(max-width:900px){.hero-brand{top:15px;left:18px}.hero-menu-button{top:12px;right:18px}.page-grid{grid-template-columns:1fr}.page-card{min-height:210px}.hero-topline{top:76px}}
 @media(max-width:560px){.hero-brand .brand-mark{width:39px;height:39px}.hero-brand .brand b{font-size:18px}.hero-menu-button>span:last-child{display:none}.page-hero{min-height:52svh;padding:110px 20px 52px}.page-hero h1,.guide-hero h1,.reservation-page h1{font-size:43px}}
+
+/* Cross-check polish: conversion, resilience, senior readability */
+.hero-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;margin-top:24px;padding:13px 18px;background:#fff;color:var(--navy);font-size:15px;font-weight:700;letter-spacing:.04em;transition:transform .25s var(--ease),background .25s var(--ease)}
+.hero-cta:hover,.hero-cta:focus-visible{transform:translateY(-2px);background:var(--paper)}
+.mobile-menu a:last-child{margin-top:16px;padding:16px 18px;background:var(--ink);color:var(--paper);border-bottom:0}
+.media-disclaimer{margin-top:20px!important;padding-left:14px;border-left:1px solid rgba(255,255,255,.55);font-size:14px!important;line-height:1.7;color:rgba(255,255,255,.86)}
+.preview-note{font-size:14px}
+.schedule-row time,.schedule-row span{font-size:14px;line-height:1.55}
+.catch figcaption span{font-size:13px}.catch-disclaimer{font-size:14px;line-height:1.75}
+footer p,footer>small{font-size:12px;line-height:1.65}
+.choice-grid small{font-size:13px}.booking-fields>label,.booking-fields legend{font-size:14px}
+.booking-help{font-size:14px}.booking-summary dt{font-size:13px}.preview-warning p{font-size:14px}
+.booking-complete>p:not(.booking-kicker):not(.booking-complete-mark){font-size:14px}
+.booking-error{min-height:1.5em;margin:14px 0 0;color:#9b2c2c;font-size:14px;font-weight:700}
+@media(max-width:560px){.preview-note{font-size:14px}.schedule-row{min-height:104px}.schedule-row time,.schedule-row span{font-size:14px}.hero-cta{width:min(100%,320px);font-size:16px}.media-disclaimer{font-size:14px!important}}
