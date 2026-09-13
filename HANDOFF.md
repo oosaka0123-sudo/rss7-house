@@ -1,37 +1,35 @@
 # RSS7 HOUSE — HANDOFF
 
-Updated: 2026-09-10
+Updated: 2026-09-13
+
+## LATEST OVERRIDE — ABSOLUTE PHOTO RULE
+This section supersedes any older wording below about photo reuse or selected image numbers.
+
+- **同じ写真は絶対に使わない。**
+- The same image file must not appear more than once anywhere across the public site.
+- No cross-page reuse and no same-page reuse, even for secondary cards, mosaics, backgrounds, posters, or decorative sections.
+- Before publish, audit `index.html`, `works.html`, `quality.html`, `concept.html`, `contact.html` and CSS image references. Any duplicated architectural image path is a release blocker.
+- If unique approved photos run out, stop and leave that slot photo-free rather than reusing an existing photo.
+- Do not silently substitute an unapproved generated image.
+- HOME Veo hero video and the current HOME copy remain locked unless the user explicitly asks to change them.
+- Core visuals must remain premium contemporary new-build custom homes; no old-house, machiya, renovation, or used-looking imagery.
+
+### Current selected generated images
+The latest explicit user selection is:
+1. **4th image:** `静寂の中庭と北欧和モダンの家` — modern new-build courtyard/interior image.
+2. **5th image:** `夜空に映える和モダン邸宅` — modern new-build night exterior image.
+
+These selections replace older handoff wording that referred to image 3 and image 5.
 
 ## Current production state
 - Repository: `oosaka0123-sudo/rss7-house`
 - GitHub Pages: `https://oosaka0123-sudo.github.io/rss7-house/`
-- Current main HEAD at handoff: `aac7371`
-- HOME hero uses the Veo drone video again, with separate desktop/mobile videos and `loop` enabled.
-- Do **not** change the current HOME copy unless explicitly requested. The user preferred the earlier, simpler wording/layout.
-- QUALITY has already been rebuilt toward a realistic premium new-build custom-home page.
-- Old/used-looking traditional-house imagery was rejected for this new-build order-home concept.
+- HOME hero uses the Veo drone video, with separate desktop/mobile videos and loop enabled.
+- Do not change the current HOME copy unless explicitly requested.
+- QUALITY is intended to be a realistic premium new-build custom-home page.
 
 ## Highest-priority next task
-The user found the same house photo reused on multiple pages and explicitly said:
-> 同じ写真 使い回ししないで
-
-Rule from now on: **do not reuse the same main architectural photo on different major sections/pages.** Each major visual slot should get a distinct image.
-
-### User-selected new images
-From the latest generated 5-image batch, the user explicitly chose **image 3 and image 5**.
-
-- **Image 3:** bright premium new-build living/dining interior with feature staircase, large windows, warm natural wood, modern Japanese custom-home style.
-  - Current conversation generation path: `/mnt/data/ghostwriter_images/generated/wide_cinematic_interior_architectural_photograph_4_batch_3.png`
-  - Intended use: interior/WORKS/QUALITY slot where a unique living-space image is needed.
-- **Image 5:** premium new-build modern Japanese exterior at night, warm interior lighting, landscaped approach, clearly contemporary/new construction.
-  - Current conversation generation path: `/mnt/data/ghostwriter_images/generated/a_wide_cinematic_photorealistic_nighttime_exteri_6_batch_5.png`
-  - Intended use: exterior/QUALITY/WORKS/CONTACT slot where a unique nighttime exterior is needed.
-
-These selected images have **not yet been uploaded to the GitHub repository**. Preserve them first, then add them to `assets/` with clear names such as:
-- `assets/newbuild-living-stair.webp`
-- `assets/newbuild-night-exterior.webp`
-
-After upload, replace duplicated uses of existing house imagery so each page/major section has its own image.
+Remove all duplicated architectural photo usage across the public five-page site and make every photo slot unique.
 
 ## Visual direction — locked
 - Premium new-build custom home / 注文住宅.
@@ -40,7 +38,7 @@ After upload, replace duplicated uses of existing house imagery so each page/maj
 - No old machiya/renovation-looking homes for core new-build visuals.
 - Avoid obvious AI repetition: same house, same angle, same facade, same sunset scene across sections.
 - Mix exterior, interior, kitchen/dining, courtyard, night exterior, details/quality imagery.
-- Photos should feel like one builder's portfolio, but **not the exact same house/photo repeated**.
+- Photos should feel like one builder's portfolio, but no exact photo may be repeated anywhere.
 
 ## QUALITY page direction — locked
 QUALITY should feel like a real new-build performance/quality page, not an abstract design demo.
@@ -58,20 +56,22 @@ Keep the demo disclaimer for invented performance targets/specs. Do not present 
 - Veo-generated drone-like upward movement.
 - Desktop and mobile-specific video sources.
 - Autoplay, muted, playsinline, loop.
-- Avoid the old simulated zoom/shake version; user rejected it as `ガタガタ揺れてるだけ`.
+- Avoid the old simulated zoom/shake version.
 - Do not revert to a static or pseudo-motion hero unless explicitly requested.
 
 ## Immediate restart checklist
 1. Read this `HANDOFF.md` first.
 2. Check current `main` and production Pages before editing.
-3. Preserve/upload the selected **3rd and 5th generated images**.
-4. Audit image usage across `index.html`, `works.html`, `quality.html`, `concept.html`, `contact.html`.
-5. Replace duplicated hero-house/other repeated visual slots with unique assets.
-6. Test mobile layout first (user primarily checks on Android screenshots).
-7. Verify no broken images/links, then publish and provide a cache-busted Pages URL.
+3. Audit every image reference across `index.html`, `works.html`, `quality.html`, `concept.html`, `contact.html` and relevant CSS.
+4. Build a file-to-slot map and guarantee every public image path is used exactly once.
+5. Add/use the approved 4th and 5th generated images in unique slots only.
+6. If unique photos are insufficient, remove/de-emphasize a photo slot instead of reusing an image.
+7. Test mobile layout first (user primarily checks on Android screenshots).
+8. Verify no duplicated image paths, no broken images/links, then publish and provide a cache-busted Pages URL.
 
 ## Important user feedback to retain
 - `新築の注文住宅のサイトで この写真は駄目` → reject old/used-looking housing imagery.
-- `同じ写真 使い回ししないで` → no repeated main photos.
-- `三枚目と五枚目使って` → selected images 3 and 5 from the latest generated batch.
+- `同じ写真 使い回ししないで` → no repeated photos.
+- `ルール 同じ写真絶対に使わない` → absolute global rule; duplicate photo usage blocks release.
+- `四枚目と五枚目使って` → latest selected generated images are 4th and 5th.
 - User wants continued execution rather than stopping at a proposal.
