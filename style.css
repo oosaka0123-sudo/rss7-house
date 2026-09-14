@@ -136,6 +136,7 @@ ol,ul{list-style:none;padding:0;margin:0}
 .section h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,5vw,76px);letter-spacing:-.04em;line-height:1.35;margin:0}
 
 /* Philosophy & Text Editorial */
+.intro{overflow:hidden}
 .intro-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:8vw;margin-top:70px}
 .intro-grid p,.quality-copy>p,.editorial-text p{font-family:var(--serif);font-size:17px;line-height:2.2;margin:14px 0 35px}
 .statement{font-weight:800;font-size:clamp(64px,13vw,200px);letter-spacing:-.07em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(26,26,23,.22);margin:90px -3vw -40px}
