@@ -28,6 +28,21 @@ for (const page of pages) {
     if ((target.endsWith('.html') || target.startsWith('assets/')) && !existsSync(target)) errors.push(`${page}: broken local target: ${target}`);
   }
 }
+const visualFiles = [...pages, 'style.css', 'quality.css'];
+const imageUses = new Map();
+for (const file of visualFiles) {
+  if (!existsSync(file)) continue;
+  const text = readFileSync(file, 'utf8');
+  for (const match of text.matchAll(/assets\/[A-Za-z0-9._-]+\.(?:webp|png|jpe?g)/gi)) {
+    const asset = match[0];
+    const uses = imageUses.get(asset) || [];
+    uses.push(file);
+    imageUses.set(asset, uses);
+  }
+}
+for (const [asset, uses] of imageUses) {
+  if (uses.length > 1) errors.push(`duplicate photo reuse: ${asset} -> ${uses.join(', ')}`);
+}
 if (errors.length) {
   console.error(`Five-page QA failed:\n- ${errors.join('\n- ')}`);
   process.exit(1);

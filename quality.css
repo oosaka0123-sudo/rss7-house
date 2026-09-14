@@ -1,5 +1,5 @@
 /* QUALITY page — new-build editorial layout */
-.quality-hero-visual{position:relative;min-height:62vh;background:linear-gradient(90deg,rgba(18,23,20,.78),rgba(18,23,20,.16)),url(assets/hero-house.webp) center/cover no-repeat;color:#fff;display:flex;align-items:end;padding:150px 7vw 70px}
+.quality-hero-visual{position:relative;min-height:62vh;background:linear-gradient(90deg,rgba(18,23,20,.78),rgba(18,23,20,.16)),url(assets/garden-dusk.webp) center/cover no-repeat;color:#fff;display:flex;align-items:end;padding:150px 7vw 70px}
 .quality-hero-visual .page-banner-content{max-width:900px}
 .quality-kicker{display:inline-flex;gap:10px;align-items:center;font-size:11px;letter-spacing:.2em;font-weight:700;color:#f0d7ca}
 .quality-kicker::before{content:'';width:42px;height:1px;background:var(--accent)}
@@ -76,3 +76,10 @@
   .quality-after-list span{text-align:center}
   .quality-cta .button{max-width:360px;margin-inline:auto}
 }
+
+.quality-media-thermal{background:linear-gradient(135deg,#e8e3d8 0 48%,#c7d0c8 48% 52%,#8b978e 52% 100%)}
+.quality-media-structure{background:repeating-linear-gradient(90deg,#d7d0c1 0 28px,#8e7962 28px 31px),linear-gradient(#ece8df,#cbc3b4)}
+.quality-media-site{background:linear-gradient(145deg,#b9b0a0,#ece7dc 44%,#8f9a90)}
+.quality-media-life{background:radial-gradient(circle at 72% 35%,#d7b982 0 8%,transparent 9%),linear-gradient(145deg,#28322d,#7c7667)}
+.quality-proof-visual{min-height:320px;background:linear-gradient(135deg,#25302b 0 45%,#b6532e 45% 47%,#e5dfd2 47%)}
+.quality-after-visual{min-height:360px;background:linear-gradient(145deg,#d9d1c2,#f3efe6 55%,#6f8074)}
