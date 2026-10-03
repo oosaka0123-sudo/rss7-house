@@ -92,6 +92,33 @@ if (progress) {
   updateProgress();
 }
 
+// Scroll-linked headings: alternate direction without fighting the reveal animation.
+const scrollHeadings = [...document.querySelectorAll('.scroll-heading')];
+const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (scrollHeadings.length && !motionReduced.matches) {
+  let headingTicking = false;
+  const updateHeadingMotion = () => {
+    const viewport = innerHeight || 1;
+    const distance = innerWidth <= 800 ? 18 : 46;
+    scrollHeadings.forEach((heading) => {
+      const rect = heading.getBoundingClientRect();
+      const centerOffset = (viewport * 0.5 - (rect.top + rect.height * 0.5)) / (viewport * 0.7);
+      const progress = Math.max(-1, Math.min(1, centerOffset));
+      const direction = heading.dataset.scrollDirection === 'right' ? 1 : -1;
+      heading.style.setProperty('--scroll-shift', `${(progress * distance * direction).toFixed(1)}px`);
+    });
+    headingTicking = false;
+  };
+  const requestHeadingMotion = () => {
+    if (!headingTicking) {
+      requestAnimationFrame(updateHeadingMotion);
+      headingTicking = true;
+    }
+  };
+  addEventListener('scroll', requestHeadingMotion, { passive: true });
+  addEventListener('resize', requestHeadingMotion);
+  updateHeadingMotion();
+}
 
 // Respect reduced-motion preference for the cinematic hero.
 const heroVideo = document.querySelector('.hero-video');

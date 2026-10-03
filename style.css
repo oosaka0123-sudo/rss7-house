@@ -130,6 +130,18 @@ ol,ul{list-style:none;padding:0;margin:0}
 .ticker-track i{flex:0 0 auto;display:block;width:1px;height:.7em;background:var(--accent)}
 @keyframes ticker{to{transform:translateX(-50%)}}
 
+/* ---------- Alternating editorial motion ---------- */
+.motion-ticker{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);position:relative;z-index:2}
+.motion-ticker-dark{background:var(--surface-2);color:var(--paper)}
+.motion-ticker-paper{background:var(--paper-deep);color:var(--ink)}
+.motion-ticker-track{display:flex;align-items:center;width:max-content;gap:34px;padding:14px 0;animation:motion-ticker 34s linear infinite;will-change:transform}
+.motion-ticker-track span{flex:0 0 auto;font-family:var(--serif);font-size:clamp(19px,2.2vw,34px);letter-spacing:-.02em}
+.motion-ticker-track i{flex:0 0 auto;width:28px;height:1px;background:var(--accent)}
+.motion-ticker-reverse{animation-direction:reverse}
+@keyframes motion-ticker{to{transform:translateX(-50%)}}
+
+.scroll-heading{--scroll-shift:0px;transform:translate3d(var(--scroll-shift),0,0);will-change:transform}
+
 /* ---------- Sections & Editorial Grid ---------- */
 .section{padding:120px 7vw}
 .section-label{color:var(--accent)}
@@ -266,6 +278,8 @@ footer .footer-nav a[aria-current="page"]{color:var(--focus);text-decoration:und
   .logo-mark{width:30px;height:30px}
   .logo-type b{font-size:17px}
   .ticker-track{padding:14px 0;gap:26px;animation-duration:20s}
+  .motion-ticker-track{gap:24px;padding:12px 0;animation-duration:28s}
+  .motion-ticker-track i{width:20px}
   .section{padding:85px 24px}
   .page-banner{padding:110px 24px 60px}
   .intro-grid,.quality{grid-template-columns:1fr;gap:35px}
@@ -297,6 +311,8 @@ footer .footer-nav a[aria-current="page"]{color:var(--focus);text-decoration:und
   *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
   .js .reveal-fade,.js .reveal-mask span,.js .reveal-image .project-image{opacity:1!important;transform:none!important;clip-path:inset(0 0 0 0)!important}
   .hero>img,.hero>.hero-video{transform:none}
+  .scroll-heading{transform:none!important}
+  .motion-ticker-track{transform:none!important}
 }
 
 
